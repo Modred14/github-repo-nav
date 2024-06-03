@@ -1,5 +1,5 @@
 # Github Repository Navigator
-.
+
 This Github Repository Navigator is a web application built with Vue + Vite that fetches and displays information from my GitHub profile using GitHub's API. It showcases a user's GitHub repositories with features such as pagination, search, and filtering. It also includes detailed views for individual repositories, an error boundary example, a 404 page, and advanced CRUD operations on repositories.
 
 ## Features
