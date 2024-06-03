@@ -1,0 +1,198 @@
+
+  .details-container,
+  .details-contain,
+  .details-contain1 {
+    max-width: 600px;
+    margin-bottom: -100px;
+    margin: 70px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    color: rgb(26, 25, 25);
+  }
+  .details-contain,
+  .details-contain2 {
+    display: flex;
+    flex-direction: column;
+    grid: none;
+  }
+  Box{
+    margin-top: 0px;
+    display: block;
+  }
+  Text{
+    display: block;
+    margin-top: 15px;
+  }
+  .repository-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  
+  .repository-description {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .repository-details p {
+    margin-bottom: 8px;
+  }
+  .Input {
+    margin-bottom: 30px;
+    height: 50px;
+    font-size: 20px;
+    width: 99%;
+  }
+  button{
+    display: inline;
+  }
+  .button-del {
+    /* margin-top: -90px; */
+    background-color: red;
+    margin-left: -120px;
+    /* display: inline; */
+  }
+  .button-del:hover {
+    background-color: rgb(187, 0, 0);
+  }
+  .button-grid{
+    margin-top: 20px;
+    display: grid;
+    margin-left: 25%;
+    grid-template-columns: auto auto; /* Create two columns */
+    /* grid-gap: 20px;  */
+  }
+  .button-up{
+    /* margin-top: 20px; */
+    /* left: 25%; */
+    display: inline;
+  }
+  .button-up,
+  .createRepo,
+  .button-up1 {
+    background-color: rgb(0, 194, 0);
+  }
+  .button-up:hover,
+  .createRepo:hover,
+  .button-up1:hover {
+    background-color: rgba(0, 133, 0);
+    color: aliceblue;
+  }
+  
+  .go-home-link {
+    width: fit-content;
+    display: block;
+    margin: 10px auto;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #2600ff;
+    font-size: 16px;
+    color: #f4f4f4;
+  }
+  .go-home-link1 {
+    width: fit-content;
+    display: block;
+    margin: 10px auto;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #2600ff;
+    font-size: 16px;
+    color: #f4f4f4;
+    margin-top: -50px;
+  }
+  
+  .go-home-link:hover,
+  .go-home-link1:hover {
+    background-color: #170099;
+    color: #f4f4f4;
+  }
+  .button-up1 {
+    align-items: right;
+    margin-left: 70%;
+  }
+  @media screen and (max-width: 768px) {
+  
+    .button-up1 {
+      align-items: right;
+      margin-left: 59%;
+    }
+    
+    
+  }
+  @media screen and (max-width: 625px) and (min-width: 500px) {
+    .button-del {
+      left: 2%;
+      margin-left: -14%;
+    }
+    .button-up {
+      left: 24%;
+      margin-left: -10px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) and (min-width: 400px) {
+    .span-name{
+      max-width: 250px;
+      word-break: break-all;  }
+    
+    .button-del {
+      left: 22%;
+      margin-left: 10px;
+    }
+    .button-up {
+      left: 22%;
+      margin-left: -10px;
+    }}
+    @media screen and (max-width: 430px) and (min-width: 400px) {
+    .button-grid{
+        margin-left: 0%;
+      }
+      .button-del {
+        left: 12%;
+        margin-left: 10px;
+      }}
+  @media screen and (max-width: 400px) and (min-width: 340px) {
+    .span-name{
+      max-width: 200px;
+      word-break: break-all;  }
+      .button-del {
+        left: 10%;
+        margin-left: 10px;
+      }
+      .button-up {
+        left: 10%;
+        margin-left: -10px;
+      }  
+      .button-grid{
+        margin-left: 0%;
+      }
+      .button-del {
+        margin-left: 0%;
+        
+      }
+    }
+    @media screen and (max-width: 340px) {
+      .span-name{
+        max-width: 200px;
+        word-break: break-all;  }
+        .button-del {
+          margin-left: 0%;
+          
+        }
+        .button-up {
+          left: 10%;
+          
+        }  
+        .button-grid{
+            display: flex;
+            flex-direction: column;
+            grid: none;
+          }
+    }
+  
+  
