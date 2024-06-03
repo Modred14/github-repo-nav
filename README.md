@@ -36,7 +36,7 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 
 ## License
 
-This project was developed by **Favour Omirin** as part of the Third Semester First Assignment at **AltSchool Africa School of Engineering**.
+This project was developed by **Favour Omirin** as the Third Semester First Assignment at **AltSchool Africa School of Engineering**.
 
 
 ## License
