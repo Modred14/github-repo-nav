@@ -1,6 +1,5 @@
 <script setup>
-
-import { RouterView } from 'vue-router';
+import { RouterView } from "vue-router";
 </script>
 
 <template>
@@ -12,8 +11,8 @@ import { RouterView } from 'vue-router';
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div> -->
-  
-  <RouterView/>
+
+  <RouterView />
 </template>
 
 <style scoped>

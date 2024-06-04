@@ -20,10 +20,10 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router';
-import image from '/src/assets/notfound.png';
+import { RouterLink } from "vue-router";
+import image from "/src/assets/notfound.png";
 </script>
 
 <style scoped>
-@import './NotFound.css'
+@import "./NotFound.css";
 </style>

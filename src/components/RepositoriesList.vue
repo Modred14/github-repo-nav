@@ -18,11 +18,17 @@
                 <font-awesome-icon :icon="['fas', 'user-friends']" />
                 Following: {{ userProfile.following }}
               </p>
-              <p class="total-repo">🗂️Total Repositories: {{ repositoryCount }}</p>
+              <p class="total-repo">
+                🗂️Total Repositories: {{ repositoryCount }}
+              </p>
             </div>
             <p>
               GitHub Profile:
-              <a :href="userProfile.html_url" target="_blank" rel="noopener noreferrer">
+              <a
+                :href="userProfile.html_url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {{ userProfile.html_url }}
               </a>
             </p>
@@ -44,7 +50,9 @@
             <li v-for="repo in paginatedRepositories" :key="repo.id">
               <span class="span-name">{{ repo.name.toUpperCase() }}</span>
               <button class="infoBTN">
-                <RouterLink class="link" :to="`/repository/${repo.id}`">DETAILS</RouterLink>
+                <RouterLink class="link" :to="`/repository/${repo.id}`"
+                  >DETAILS</RouterLink
+                >
               </button>
             </li>
           </ul>
@@ -55,7 +63,9 @@
               @pageChange="handlePageChange"
             />
             <div class="Test">
-              <button class="T404" @click="navigateToInvalidUrl">Test 404 page</button>
+              <button class="T404" @click="navigateToInvalidUrl">
+                Test 404 page
+              </button>
               <ErrorThrower />
               <button class="createRepo" @click="onOpen">Create repo</button>
               <CreateRepo :isOpen="isOpen" @close="onClose" />
@@ -68,88 +78,100 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
-import { useQuery } from 'vue-query';
-import { useRouter } from 'vue-router';
-import axios from 'axios';
-import {RouterLink} from 'vue-router'
+import { ref, onMounted, computed } from "vue";
+import { useQuery } from "vue-query";
+import { useRouter } from "vue-router";
+import axios from "axios";
+import { RouterLink } from "vue-router";
 // import * as router-link from '../main.js'
 // import NotFound from './NotFound.vue'
-import image from '/src/assets/image.jpg';
-import ErrorBoundary from './ErrorBoundary.vue';
-import ErrorThrower from './ErrorThrower.vue';
-import CreateRepo from './CreateRepo.vue';
-import Paginate from './Pagination.vue';
+import image from "/src/assets/image.jpg";
+import ErrorBoundary from "./ErrorBoundary.vue";
+import ErrorThrower from "./ErrorThrower.vue";
+import CreateRepo from "./CreateRepo.vue";
+import Paginate from "./Pagination.vue";
 
-
-const token = import.meta.env.VITE_GITHUB_TOKEN || process.env.VITE_GITHUB_TOKEN;
+const token =
+  import.meta.env.VITE_GITHUB_TOKEN || process.env.VITE_GITHUB_TOKEN;
 
 const fetchUserProfile = async () => {
   try {
-    const response = await axios.get('https://api.github.com/users/Modred14', {
+    const response = await axios.get("https://api.github.com/users/Modred14", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
     return response.data;
   } catch (error) {
-    console.error('Failed to fetch user profile:', error);
-    throw new Error('Failed to fetch user profile');
+    console.error("Failed to fetch user profile:", error);
+    throw new Error("Failed to fetch user profile");
   }
 };
 
 const fetchRepositories = async () => {
   try {
-    const response = await axios.get('https://api.github.com/users/Modred14/repos', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await axios.get(
+      "https://api.github.com/users/Modred14/repos",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return response.data;
   } catch (error) {
-    console.error('Failed to fetch repositories:', error);
-    throw new Error('Failed to fetch repositories');
+    console.error("Failed to fetch repositories:", error);
+    throw new Error("Failed to fetch repositories");
   }
 };
 
 const fetchRepositoryCount = async () => {
   try {
-    const response = await axios.get('https://api.github.com/users/Modred14', {
+    const response = await axios.get("https://api.github.com/users/Modred14", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
     return response.data.public_repos;
   } catch (error) {
-    console.error('Failed to fetch repository count:', error);
-    throw new Error('Failed to fetch repository count');
+    console.error("Failed to fetch repository count:", error);
+    throw new Error("Failed to fetch repository count");
   }
 };
 
 const currentPage = ref(1);
 const perPage = ref(2);
-const searchQuery = ref('');
+const searchQuery = ref("");
 const userProfile = ref(null);
 const repositoryCount = ref(0);
 const router = useRouter();
 const isOpen = ref(false);
 
-const { data: repositories, isLoading, isError } = useQuery(['repositories'], fetchRepositories);
+const {
+  data: repositories,
+  isLoading,
+  isError,
+} = useQuery(["repositories"], fetchRepositories);
 
 onMounted(async () => {
   try {
-    const [userData, repoCountData] = await Promise.all([fetchUserProfile(), fetchRepositoryCount()]);
+    const [userData, repoCountData] = await Promise.all([
+      fetchUserProfile(),
+      fetchRepositoryCount(),
+    ]);
     userProfile.value = userData;
     repositoryCount.value = repoCountData;
   } catch (error) {
-    console.error('Failed to fetch data:', error);
+    console.error("Failed to fetch data:", error);
   }
 });
 
 const filteredRepositories = computed(() => {
-  return repositories.value?.filter((repo) =>
-    repo.name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  ) || [];
+  return (
+    repositories.value?.filter((repo) =>
+      repo.name.toLowerCase().includes(searchQuery.value.toLowerCase())
+    ) || []
+  );
 });
 
 const totalItems = computed(() => filteredRepositories.value.length);
@@ -166,7 +188,7 @@ const handlePageChange = (page) => {
 };
 
 const navigateToInvalidUrl = () => {
-  router.push('/Invalid_url');
+  router.push("/Invalid_url");
 };
 
 const onOpen = () => {
@@ -179,5 +201,5 @@ const onClose = () => {
 </script>
 
 <style scoped>
-@import './RepoList.css';
+@import "./RepoList.css";
 </style>

@@ -25,7 +25,6 @@
   color: aliceblue;
 }
 
-
 .search-repo {
   width: 689px;
   margin-inline: 46px;
@@ -127,19 +126,18 @@ span {
   padding: 1rem;
   color: white;
 }
-.header-desktop{
-   font-size: 50px;
-   /* font-family: 'Helvetica', sans-serif; */
+.header-desktop {
+  font-size: 50px;
+  /* font-family: 'Helvetica', sans-serif; */
 }
-.header
-li {
+.header li {
   background-color: #f4f4f4;
   color: #2c3e50;
 }
-:link{
+:link {
   text-decoration: none;
 }
-.name{
+.name {
   font-size: 50px;
   /* font-weight: 800; */
 }
@@ -147,8 +145,6 @@ li:hover {
   background-color: #727272;
   color: white;
 }
-
-
 
 @media screen and (max-width: 768px) {
   body {
@@ -165,5 +161,62 @@ li:hover {
   }
   .createRepo {
     margin-top: 10px;
+  }
+  .RepositoriesList {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 625px) and (min-width: 500px) {
+  .button-del {
+    left: 27%;
+    margin-left: 10px;
+  }
+  .button-up {
+    left: 24%;
+    margin-left: -10px;
+  }
+}
+
+@media screen and (max-width: 500px) and (min-width: 400px) {
+  .span-name {
+    max-width: 250px;
+    word-break: break-all;
+  }
+
+  .button-del {
+    left: 22%;
+    margin-left: 10px;
+  }
+  .button-up {
+    left: 22%;
+    margin-left: -10px;
+  }
+}
+@media screen and (max-width: 400px) and (min-width: 340px) {
+  .span-name {
+    max-width: 200px;
+    word-break: break-all;
+  }
+  .button-del {
+    left: 10%;
+    margin-left: 10px;
+  }
+  .button-up {
+    left: 10%;
+    margin-left: -10px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .span-name {
+    max-width: 200px;
+    word-break: break-all;
+  }
+  .button-del {
+    left: 10%;
+    /* margin-left: 10px; */
+  }
+  .button-up {
+    left: 10%;
+    /* margin-left: -10px; */
   }
 }

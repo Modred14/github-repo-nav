@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, onErrorCaptured } from 'vue';
+import { ref, onErrorCaptured } from "vue";
 
 const hasError = ref(false);
 const error = ref(null);
@@ -32,11 +32,11 @@ onErrorCaptured((err, instance, info) => {
   hasError.value = true;
   error.value = err;
   errorInfo.value = info;
-  console.error('Uncaught error:', err, info);
+  console.error("Uncaught error:", err, info);
   return false; // Prevent further propagation
 });
 </script>
 
 <style scoped>
-@import './Error.css';
+@import "./Error.css";
 </style>
