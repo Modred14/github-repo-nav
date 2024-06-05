@@ -23,6 +23,7 @@
     "vue-query": "^1.26.0",
     "vue-router": "^4.3.2",
     "vue-skeleton-loader": "^1.0.0",
+    "vue3-skeleton-loader": "^0.2.0",
     "vuetify": "^3.6.0-beta.0.0"
   },
   "devDependencies": {

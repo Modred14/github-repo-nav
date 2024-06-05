@@ -38,6 +38,4 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 
 This project was developed by **Favour Omirin** as the Third Semester First Assignment at **AltSchool Africa School of Engineering**.
 
-## License
-
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. # Github_Repository_Navigator
