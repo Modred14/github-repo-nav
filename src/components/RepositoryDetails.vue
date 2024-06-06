@@ -31,15 +31,12 @@
     <div v-else-if="!repository && !isLoading" class="details-container">
       <NotFound />
     </div>
-    <Box
-      class="details-container"
-      top="50%"
-      text-align="center"
-      v-else="isLoading"
-    >
-      <Spinner top="50%" />
-      <Text>Loading repository details...</Text>
-    </Box>
+    <Box-Spin top="50%" text-align="center" v-else="isLoading">
+      <div class="details-container-spin">
+        <Spinner top="50%" />
+        <Text>Loading repository details...</Text>
+      </div>
+    </Box-Spin>
   </ErrorBoundary>
 </template>
 
